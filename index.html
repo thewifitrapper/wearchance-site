@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHANCE — Collection 001 | It Only Takes One</title>
+<meta name="description" content="CHANCE is a Miami luxury clothing house. Collection 001: signature tees in black on black and white with black gloss. It only takes one.">
+<meta property="og:title" content="CHANCE — Collection 001">
+<meta property="og:description" content="Signature pieces from Miami. It only takes one.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/camp-rooftop-1024.webp">
+<meta name="theme-color" content="#050505">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CHANCE","slogan":"It only takes one.","foundingLocation":"Miami, Florida"}</script>
+<style>
+:root{
+  --black:#050505;--ink:#111111;--ivory:#F4F1EA;--white:#FFFFFF;--charcoal:#252525;--silver:#A7A7A7;--navy:#111B2A;
+  --serif:'Cinzel','Trajan Pro',Georgia,serif;--sans:'Inter','Manrope',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --pad:clamp(20px,5vw,72px);--max:1440px;--t:.35s;--ease:cubic-bezier(.2,.6,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--black);color:var(--ivory);font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.7;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,select{font:inherit;color:inherit}
+:focus-visible{outline:1px solid var(--ivory);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ivory);color:var(--black);padding:10px 16px;z-index:200}
+.skip:focus{left:0}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:.14em;text-transform:uppercase}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--silver);font-weight:400}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+section{padding:clamp(72px,10vw,150px) 0}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:.12em;text-transform:uppercase;line-height:1.15}
+h2{font-size:clamp(26px,3.6vw,52px)}
+p{max-width:56ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 34px;border:1px solid var(--ivory);font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:400;transition:background var(--t),color var(--t),border-color var(--t)}
+.btn:hover{background:var(--ivory);color:var(--black)}
+.btn.solid{background:var(--ivory);color:var(--black)}
+.btn.solid:hover{background:transparent;color:var(--ivory)}
+.btn[disabled]{opacity:.35;pointer-events:none}
+.link{font-size:11px;letter-spacing:.26em;text-transform:uppercase;border-bottom:1px solid var(--silver);padding-bottom:5px;transition:border-color var(--t)}
+.link:hover{border-color:var(--ivory)}
+.note{font-size:12px;color:var(--silver);border:1px dashed #3a3a3a;padding:10px 14px;max-width:60ch}
+.ph{color:var(--silver)}
+
+/* announcement + header */
+.ann{background:var(--ivory);color:var(--black);text-align:center;font-size:10.5px;letter-spacing:.26em;padding:10px var(--pad);font-weight:400}
+header.top{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.96);border-bottom:1px solid #1c1c1c}
+.bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
+.nav{display:flex;gap:clamp(18px,2.4vw,38px)}
+.nav a,.tools button{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:400;color:var(--ivory);opacity:.8;transition:opacity var(--t)}
+.nav a:hover,.nav a[aria-current=page],.tools button:hover{opacity:1}
+.wordmark{font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);letter-spacing:.42em;padding-left:.42em;text-align:center}
+.tools{display:flex;justify-content:flex-end;gap:clamp(16px,2vw,30px)}
+.menu-btn{display:none;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+@media(max-width:860px){
+  .nav{display:none}.menu-btn{display:block;justify-self:start}
+  .bar{height:64px}.tools .hide-m{display:none}
+}
+.drawer-nav{position:fixed;inset:0;z-index:90;background:var(--black);padding:96px var(--pad) 40px;display:none;flex-direction:column;gap:6px}
+.drawer-nav.open{display:flex}
+.drawer-nav a{font-family:var(--serif);font-size:26px;letter-spacing:.16em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid #1c1c1c}
+.drawer-nav .close{position:absolute;top:22px;right:var(--pad);font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:calc(100vh - 110px);padding:0}
+.hero .copy{display:flex;flex-direction:column;justify-content:center;gap:28px;padding:clamp(48px,7vw,110px) var(--pad)}
+.hero h1{font-size:clamp(36px,5.2vw,84px);letter-spacing:.1em}
+.hero .sub{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--silver)}
+.hero .cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
+.hero figure{position:relative;overflow:hidden;background:var(--navy)}
+.hero figure img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero figure{order:-1;aspect-ratio:4/5}
+  .hero .copy{padding:44px var(--pad) 64px}
+}
+
+/* intro */
+.intro{background:var(--ivory);color:var(--black);text-align:center}
+.intro .wrap{display:flex;flex-direction:column;align-items:center;gap:28px}
+.intro .eyebrow{color:#555}
+.intro p{margin:0 auto;font-size:16px;color:#2a2a2a}
+.intro h2{font-size:clamp(30px,4.6vw,68px)}
+
+/* product grid */
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(36px,5vw,64px);flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.5vw,36px)}
+@media(max-width:620px){.grid{grid-template-columns:1fr}}
+.card{display:flex;flex-direction:column;gap:18px}
+.card .media{position:relative;aspect-ratio:1/1;overflow:hidden;background:#0d0d0d;display:block}
+.card .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s var(--ease),transform 1.2s var(--ease)}
+.card .media img.b{opacity:0}
+.card:hover .media img.b{opacity:1}
+.card:hover .media img.a{transform:scale(1.015)}
+@media(hover:none){.card .media img.b{display:none}}
+.card .meta{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.card h3{font-size:15px;letter-spacing:.2em}
+.price{font-size:13px;letter-spacing:.08em;font-weight:400;white-space:nowrap}
+.price s{color:var(--silver);margin-right:8px;font-weight:300}
+.card .sub{font-size:12px;color:var(--silver);letter-spacing:.06em}
+.card .row{display:flex;gap:12px;align-items:center}
+.tag{position:absolute;top:14px;left:14px;z-index:2;background:var(--ivory);color:var(--black);font-size:9.5px;letter-spacing:.24em;padding:5px 10px;text-transform:uppercase;font-weight:400}
+.tag.so{background:var(--charcoal);color:var(--ivory)}
+
+/* editorial split */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,100px);align-items:center}
+.split.rev .ed-img{order:2}
+.ed-img{background:#0d0d0d;overflow:hidden}
+.ed-img img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.split .txt{display:flex;flex-direction:column;gap:26px}
+.split .txt p{color:#cfcbc2}
+@media(max-width:860px){.split{grid-template-columns:1fr}.split.rev .ed-img{order:0}}
+.alt{background:var(--ink)}
+
+/* signature mark */
+.mark{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.5vw,36px);margin-top:48px}
+@media(max-width:620px){.mark{grid-template-columns:1fr}}
+.mark figure{display:flex;flex-direction:column;gap:12px}
+.mark img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#0d0d0d}
+.mark figcaption{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--silver)}
+
+/* statement */
+.statement{text-align:center;border-top:1px solid #1c1c1c;border-bottom:1px solid #1c1c1c}
+.statement .big{font-family:var(--serif);font-size:clamp(34px,6vw,96px);letter-spacing:.14em;text-transform:uppercase;line-height:1.1}
+.statement .wrap{display:flex;flex-direction:column;align-items:center;gap:26px}
+
+/* journal */
+.rail{display:flex;gap:clamp(14px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
+.rail::-webkit-scrollbar{display:none}
+.rail figure{flex:0 0 clamp(240px,30vw,400px);scroll-snap-align:start;min-width:0}
+.rail img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#0d0d0d}
+.rail figcaption{margin-top:12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--silver)}
+.arrows{display:flex;gap:10px}
+.arrows button{width:46px;height:46px;border:1px solid #333;font-size:16px;transition:border-color var(--t)}
+.arrows button:hover{border-color:var(--ivory)}
+
+/* newsletter */
+.news{background:var(--ivory);color:var(--black);text-align:center}
+.news .wrap{display:flex;flex-direction:column;align-items:center;gap:22px}
+.news .eyebrow{color:#555}
+.news form{display:flex;gap:0;width:min(520px,100%);margin-top:8px}
+.news input{flex:1;min-width:0;height:52px;border:1px solid var(--black);border-right:0;background:transparent;padding:0 16px;color:var(--black);font-size:14px}
+.news input::placeholder{color:#777}
+.news .btn{border-color:var(--black);color:var(--black)}
+.news .btn:hover{background:var(--black);color:var(--ivory)}
+.news .msg{font-size:12px;min-height:20px;color:#333}
+.news .msg.err{color:#8a1f1f}
+
+/* footer */
+footer{padding:80px 0 40px;border-top:1px solid #1c1c1c}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr 1fr}.fgrid>:first-child{grid-column:1/-1}}
+footer h4{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--silver);font-weight:400;margin-bottom:16px}
+footer li{list-style:none;margin-bottom:8px}
+footer li a{font-size:13px;opacity:.85}footer li a:hover{opacity:1}
+.legal{margin-top:56px;padding-top:24px;border-top:1px solid #1c1c1c;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--silver);letter-spacing:.1em}
+
+/* shop */
+.page-head{padding:clamp(56px,8vw,110px) 0 40px}
+.toolbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;border-top:1px solid #1c1c1c;border-bottom:1px solid #1c1c1c;padding:16px 0;margin-bottom:40px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid #333;padding:8px 16px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;transition:all var(--t)}
+.chip[aria-pressed=true]{background:var(--ivory);color:var(--black);border-color:var(--ivory)}
+select{background:var(--black);border:1px solid #333;padding:9px 14px;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.empty{padding:60px 0;color:var(--silver)}
+
+/* product page */
+.pdp{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:start;padding-top:clamp(28px,4vw,56px)}
+.gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gal figure{background:#0d0d0d;overflow:hidden}
+.gal figure.wide{grid-column:1/-1}
+.gal img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.buy{position:sticky;top:96px;display:flex;flex-direction:column;gap:22px}
+.buy h1{font-size:clamp(26px,3vw,40px)}
+.crumbs{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--silver)}
+.crumbs a:hover{color:var(--ivory)}
+.sizes{display:flex;gap:8px;flex-wrap:wrap}
+.sizes button{min-width:52px;height:48px;border:1px solid #333;font-size:12px;letter-spacing:.1em;transition:all var(--t)}
+.sizes button[aria-pressed=true]{background:var(--ivory);color:var(--black);border-color:var(--ivory)}
+.sizes button:hover{border-color:var(--ivory)}
+.lbl{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--silver)}
+.err-t{color:#d98080;font-size:12px;min-height:18px}
+details{border-top:1px solid #222;padding:16px 0}
+details:last-of-type{border-bottom:1px solid #222}
+summary{cursor:pointer;font-size:11px;letter-spacing:.24em;text-transform:uppercase;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:'+';font-size:16px}
+details[open] summary::after{content:'−'}
+details p{margin-top:12px;font-size:13px;color:#cfcbc2}
+@media(max-width:900px){.pdp{grid-template-columns:1fr}.buy{position:static}}
+
+/* house / info */
+.prose{max-width:760px}
+.prose h2{margin:56px 0 18px;font-size:clamp(20px,2.4vw,30px)}
+.prose p{margin-bottom:18px;color:#d8d4cb;max-width:none}
+
+/* overlays */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;opacity:0;pointer-events:none;transition:opacity var(--t)}
+.scrim.open{opacity:1;pointer-events:auto}
+.cart{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--ink);z-index:110;transform:translateX(100%);transition:transform .45s var(--ease);display:flex;flex-direction:column;border-left:1px solid #222}
+.cart.open{transform:none}
+.cart header{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid #222}
+.cart .items{flex:1;overflow:auto;padding:8px 26px}
+.line{display:grid;grid-template-columns:92px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid #1c1c1c}
+.line img{width:92px;height:92px;object-fit:cover}
+.line h5{font-family:var(--serif);font-weight:400;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+.line .s{font-size:12px;color:var(--silver)}
+.qty{display:inline-flex;border:1px solid #333;margin-top:8px}
+.qty button{width:34px;height:34px}
+.qty span{width:34px;text-align:center;line-height:34px;font-size:13px}
+.rm{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--silver);margin-left:14px;border-bottom:1px solid #444}
+.cart footer{padding:22px 26px;border-top:1px solid #222;display:flex;flex-direction:column;gap:14px}
+.cart .tot{display:flex;justify-content:space-between;font-size:14px}
+.cart .empty{padding:48px 0;text-align:center}
+.search{position:fixed;inset:0;z-index:120;background:rgba(5,5,5,.98);display:none;flex-direction:column;padding:96px var(--pad) 40px}
+.search.open{display:flex}
+.search input{width:100%;max-width:800px;margin:0 auto;background:transparent;border:0;border-bottom:1px solid #444;height:64px;font-family:var(--serif);font-size:clamp(20px,3vw,34px);letter-spacing:.12em;text-transform:uppercase;outline:none}
+.search .res{max-width:800px;width:100%;margin:32px auto 0;display:grid;gap:14px}
+.search .res a{display:flex;gap:16px;align-items:center;border-bottom:1px solid #1c1c1c;padding-bottom:14px}
+.search .res img{width:64px;height:64px;object-fit:cover}
+.search .close{position:absolute;top:26px;right:var(--pad);font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);background:var(--ivory);color:var(--black);padding:14px 22px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;z-index:130;opacity:0;transition:all .35s var(--ease);pointer-events:none;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<a class="skip" href="#main-content-skip" data-skip>Skip to content</a>
+<div class="ann" id="ann">COMPLIMENTARY U.S. SHIPPING ON ORDERS OVER $150</div>
+<header class="top">
+  <div class="wrap bar">
+    <button class="menu-btn" data-action="menu" aria-label="Open menu">Menu</button>
+    <nav class="nav" aria-label="Primary">
+      <a href="#shop" data-nav="shop">Collection</a>
+      <a href="#house" data-nav="house">The House</a>
+      <a href="#journal" data-nav="journal">Journal</a>
+    </nav>
+    <a class="wordmark" href="#home" aria-label="CHANCE home">CHANCE</a>
+    <div class="tools">
+      <button class="hide-m" data-action="search">Search</button>
+      <button class="hide-m" data-action="contact">Contact</button>
+      <button data-action="cart" aria-label="Open bag">Bag (<span id="cc">0</span>)</button>
+    </div>
+  </div>
+</header>
+
+<nav class="drawer-nav" id="mnav" aria-label="Mobile">
+  <button class="close" data-action="menuclose">Close</button>
+  <a href="#home">Home</a><a href="#shop">Collection</a><a href="#house">The House</a><a href="#journal">Journal</a><a href="#contact">Contact</a>
+  <button style="text-align:left;font-family:var(--serif);font-size:26px;letter-spacing:.16em;text-transform:uppercase;padding:14px 0" data-action="search">Search</button>
+</nav>
+
+<main id="app" tabindex="-1"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="wordmark" style="text-align:left;padding:0;font-size:24px">CHANCE</div>
+        <p style="margin-top:14px;color:var(--silver);font-size:13px">Signature pieces from Miami.<br>It only takes one.</p><p style="margin-top:10px;font-size:12px;letter-spacing:.2em">@WEARCHANCE</p>
+      </div>
+      <div><h4>Shop</h4><ul><li><a href="#shop">Collection 001</a></li><li><a href="#product-white">White Tee</a></li><li><a href="#product-black">Black Tee</a></li></ul></div>
+      <div><h4>House</h4><ul><li><a href="#house">The House</a></li><li><a href="#journal">Journal</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Care</h4><ul><li><a href="#shipping">Shipping &amp; Returns</a></li><li><a href="#sizing">Size Guide</a></li><li><a href="#privacy">Privacy</a></li><li><a href="#terms">Terms</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 CHANCE. All rights reserved.</span><span>Miami, Florida</span></div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" data-action="closeall"></div>
+<aside class="cart" id="cart" aria-label="Shopping bag" aria-hidden="true" role="dialog" aria-modal="true">
+  <header><h3 style="font-size:14px;letter-spacing:.24em">Your Bag</h3><button data-action="closeall" class="eyebrow">Close</button></header>
+  <div class="items" id="items"></div>
+  <footer id="cartfoot"></footer>
+</aside>
+<div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="close" data-action="closeall">Close</button>
+  <input id="q" type="search" placeholder="Search" aria-label="Search the collection" autocomplete="off">
+  <div class="res" id="res"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============ CONFIG (edit here) ============ */
+const CFG={
+  brand:'CHANCE',
+  freeShipThreshold:150,           // USER-PROVIDED; confirm — sits above single-item price
+  sizes:['S','M','L','XL','XXL'],   // confirmed S–XXL
+  // SHOPIFY: fill these after the store is reactivated and products exist.
+  // variants: map 'productId-size' -> numeric Shopify variant ID. Checkout uses a cart permalink (no API token needed).
+  shop:{domain:'ijbf1b-fy.myshopify.com',variants:{"white-S": "68539988508951", "white-M": "68539988541719", "white-L": "68539988574487", "white-XL": "68539988607255", "white-XXL": "68539988640023", "black-S": "68539989983511", "black-M": "68539990016279", "black-L": "68539990049047", "black-XL": "68539990081815", "black-XXL": "68539990114583"}},     // e.g. domain:'wearchance.com' or 'yacgw6-jb.myshopify.com'
+  contact:{email:'',instagram:'@wearchance'},  // fill in
+  checkoutConnected:false,
+  newsletterEndpoint:'',            // INTEGRATION POINT: Mailchimp form action URL
+  img:(k,w)=>`images/${k}-${w}.webp`
+};
+const STOCK={white:{S:5,M:12,L:16,XL:12,XXL:5},black:{S:5,M:12,L:16,XL:12,XXL:5}}; // from CHANCE; Shopify becomes source of truth once connected
+const PRODUCTS=[
+  {id:'white',slug:'product-white',name:'CHANCE Signature Tee — White',short:'White with black gloss',color:'White',price:110,sale:90,
+   front:'white-front',back:'white-back',dF:'white-detail-front',dB:'white-detail-back',avail:'available',
+   desc:'The CHANCE signature tee in white, with a restrained black gloss mark at the chest and the curved question-mark artwork across the back.',
+   mat:'Material: 100% cotton. Weight: 280 GSM compact knit. Made in Pakistan.',
+   fit:'Relaxed, boxy fit. Available in sizes S–XXL. Model height and size worn: to be confirmed.',
+   care:'<ul style="margin:10px 0 0 18px"><li>Machine wash cold, inside out</li><li>Wash with similar colors</li><li>Use mild detergent</li><li>Do not bleach</li><li>Do not iron directly over artwork</li><li>Hang dry or tumble dry low</li><li>Do not dry clean</li></ul>'},
+  {id:'black',slug:'product-black',name:'CHANCE Signature Tee — Black',short:'Black on black',color:'Black',price:110,sale:90,
+   front:'black-front',back:'black-back',dF:'black-detail-front',dB:'black-detail-back',avail:'available',
+   desc:'The CHANCE signature tee in black, with a tonal gloss mark at the chest and the curved question-mark artwork across the back.',
+   mat:'Material: 100% cotton. Weight: 280 GSM compact knit. Made in Pakistan.',
+   fit:'Relaxed, boxy fit. Available in sizes S–XXL. Model height and size worn: to be confirmed.',
+   care:'<ul style="margin:10px 0 0 18px"><li>Machine wash cold, inside out</li><li>Wash with similar colors</li><li>Use mild detergent</li><li>Do not bleach</li><li>Do not iron directly over artwork</li><li>Hang dry or tumble dry low</li><li>Do not dry clean</li></ul>'}
+];
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const money=n=>'$'+n.toFixed(2).replace(/\.00$/,'');
+const getP=id=>PRODUCTS.find(p=>p.id===id);
+const stock=(id,sz)=>(STOCK[id]||{})[sz]||0;
+PRODUCTS.forEach(p=>{p.avail=CFG.sizes.some(z=>stock(p.id,z)>0)?'available':'soldout'});
+const priceHTML=p=>p.sale&&p.sale<p.price?`<s>${money(p.price)}</s>${money(p.sale)}`:money(p.price);
+const unit=p=>p.sale&&p.sale<p.price?p.sale:p.price;
+const imgT=(k,alt,w=800,extra='',dim=800)=>`<img src="${CFG.img(k,w)}" srcset="${CFG.img(k,800)} 800w, ${CFG.img(k,1600)} 1600w" sizes="(max-width:620px) 100vw, 48vw" width="${dim}" height="${dim}" alt="${alt}" loading="lazy" decoding="async" ${extra}>`;
+const camp=(k,alt,w=1024,h=1536,eager=false)=>`<img src="images/${k}-1024.webp" srcset="images/${k}-640.webp 640w, images/${k}-1024.webp 1024w" sizes="(max-width:860px) 100vw, 55vw" width="${w}" height="${h}" alt="${alt}" ${eager?'fetchpriority="high"':'loading="lazy"'} decoding="async">`;
+
+/* ============ STORE ============ */
+let cart=[],recent=[];
+try{cart=JSON.parse(sessionStorage.getItem('ch_cart')||'[]');recent=JSON.parse(sessionStorage.getItem('ch_rec')||'[]')}catch(e){}
+const save=()=>{try{sessionStorage.setItem('ch_cart',JSON.stringify(cart));sessionStorage.setItem('ch_rec',JSON.stringify(recent))}catch(e){}};
+let toastT;const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2600)};
+
+function addToCart(id,size){
+  const l=cart.find(x=>x.id===id&&x.size===size);
+  if(l){if(l.q>=stock(id,size)){toast('Maximum available in this size');return}l.q++}else cart.push({id,size,q:1});
+  save();renderCart();
+}
+function renderCart(){
+  const n=cart.reduce((a,l)=>a+l.q,0);$('#cc').textContent=n;
+  const box=$('#items'),foot=$('#cartfoot');
+  if(!cart.length){
+    box.innerHTML='<div class="empty"><p class="eyebrow" style="margin-bottom:18px">Your bag is empty</p><a class="btn" href="#shop" data-action="closeall">Shop the collection</a></div>';
+    foot.innerHTML='';return;
+  }
+  box.innerHTML=cart.map((l,i)=>{const p=getP(l.id);return `<div class="line"><img src="${CFG.img(p.front,800)}" width="92" height="92" alt="${p.name}"><div><h5>${p.name}</h5><div class="s">Size ${l.size} · ${money(unit(p))}</div><div><span class="qty"><button data-action="dec" data-i="${i}" aria-label="Decrease quantity">−</button><span aria-live="polite">${l.q}</span><button data-action="inc" data-i="${i}" aria-label="Increase quantity">+</button></span><button class="rm" data-action="rm" data-i="${i}">Remove</button></div></div></div>`}).join('');
+  const sub=cart.reduce((a,l)=>a+unit(getP(l.id))*l.q,0);
+  const left=CFG.freeShipThreshold-sub;
+  foot.innerHTML=`<div class="tot"><span>Subtotal</span><span>${money(sub)}</span></div><p class="ph" style="font-size:12px">${left>0?`Add ${money(left)} for complimentary U.S. shipping.`:'Complimentary U.S. shipping applies.'} Taxes and shipping are calculated at checkout.</p><button class="btn solid" data-action="checkout" style="width:100%">Checkout</button>`;
+}
+function openPanel(el){closeAll(true);$('#scrim').classList.add('open');el.classList.add('open');el.setAttribute('aria-hidden','false');lastFocus=document.activeElement;
+  const f=$('input,button,a',el);f&&setTimeout(()=>f.focus(),50);document.body.style.overflow='hidden'}
+let lastFocus=null;
+function closeAll(keep){
+  ['#cart','#search'].forEach(s=>{const e=$(s);e.classList.remove('open');e.setAttribute('aria-hidden','true')});
+  $('#mnav').classList.remove('open');$('#scrim').classList.remove('open');document.body.style.overflow='';
+  if(!keep&&lastFocus){lastFocus.focus();lastFocus=null}
+}
+function runSearch(v){
+  v=v.trim().toLowerCase();const r=$('#res');
+  if(!v){r.innerHTML='';return}
+  const m=PRODUCTS.filter(p=>(p.name+' '+p.color+' '+p.short+' tee signature black white white').toLowerCase().includes(v));
+  r.innerHTML=m.length?m.map(p=>`<a href="#${p.slug}" data-action="closeall"><img src="${CFG.img(p.front,800)}" width="64" height="64" alt=""><span><span class="serif" style="font-size:13px">${p.name}</span><br><span class="ph" style="font-size:12px">${money(unit(p))}</span></span></a>`).join(''):`<p class="ph">No results for “${v.replace(/[<>&]/g,'')}”.</p>`;
+}
+
+/* ============ VIEWS ============ */
+function card(p){
+  const so=p.avail==='soldout';
+  return `<article class="card rv"><a class="media" href="#${p.slug}" aria-label="${p.name}">${p.sale?'<span class="tag">Running sale</span>':''}${so?'<span class="tag so" style="left:auto;right:14px">Sold out</span>':''}${imgT(p.front,p.name+' — front, genuine product photograph')}${imgT(p.back,p.name+' — back','800','class="b"')}</a>
+  <div class="meta"><div><h3><a href="#${p.slug}">${p.name}</a></h3><div class="sub">${p.short}</div></div><div class="price">${priceHTML(p)}</div></div>
+  <div class="row"><a class="link" href="#${p.slug}">View</a></div></article>`;
+}
+const V={};
+V.home=()=>`
+<section class="hero" aria-label="Collection 001">
+  <div class="copy">
+    <span class="eyebrow">Collection 001 · Miami</span>
+    <h1>It only<br>takes one.</h1>
+    <p class="sub">Signature pieces. Not limited by design.</p>
+    <div class="cta"><a class="btn solid" href="#shop">Shop the collection</a><a class="btn" href="#house">The House</a></div>
+  </div>
+  <figure>${camp('camp-rooftop','Two men on a Miami rooftop at night wearing CHANCE tees, one in black seated on a sofa, one in white standing at the railing',1122,1402,true)}</figure>
+</section>
+<section class="intro"><div class="wrap rv">
+  <span class="eyebrow">Collection 001</span>
+  <h2>Two pieces. One mark.</h2>
+  <p>CHANCE begins with two signature tees, an white piece with a black gloss mark and a black piece in tonal black. Made to be worn often, and kept.</p>
+  <a class="link" href="#shop" style="border-color:#555">Explore</a>
+</div></section>
+<section><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">Featured</span><h2 style="margin-top:12px">The Pieces</h2></div><a class="link" href="#shop">View all</a></div>
+  <div class="grid">${PRODUCTS.map(card).join('')}</div>
+</div></section>
+<section class="alt"><div class="wrap"><div class="split">
+  <div class="ed-img rv">${camp('camp-front','Campaign photograph, front view: models in the black and white CHANCE tees on a Miami rooftop')}</div>
+  <div class="txt rv"><span class="eyebrow">Editorial</span><h2>Built for the city after dark.</h2>
+  <p>Miami at night: glass, concrete and warm light. CHANCE is made for that rooftop hour, quiet, deliberate and sure.</p>
+  <p class="ph" style="font-size:12px">Campaign imagery is AI-assisted. Product photographs are the authoritative representation of each piece.</p>
+  <a class="link" href="#journal" style="align-self:flex-start">Open the journal</a></div>
+</div></div></section>
+<section><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">Signature mark</span><h2 style="margin-top:12px">The Detail</h2></div></div>
+  <p style="color:#cfcbc2">A small, centered CHANCE wordmark with EST. 2024 on the front. On the back, a curved question-mark arrangement unique to the house. Shown here in the genuine product photographs.</p>
+  <div class="mark">
+    <figure class="rv">${imgT('white-detail-front','Close-up of the white tee chest mark: CHANCE EST. 2024 in black gloss')}<figcaption>White · front mark</figcaption></figure>
+    <figure class="rv">${imgT('black-detail-front','Close-up of the black tee chest mark: CHANCE EST. 2024 tonal gloss')}<figcaption>Black · front mark</figcaption></figure>
+    <figure class="rv">${imgT('white-detail-back','Close-up of the white tee back artwork')}<figcaption>White · back artwork</figcaption></figure>
+    <figure class="rv">${imgT('black-detail-back','Close-up of the black tee back artwork')}<figcaption>Black · back artwork</figcaption></figure>
+  </div>
+</div></section>
+<section class="statement"><div class="wrap rv"><span class="eyebrow">Our belief</span><div class="big">It only takes one.</div><p style="color:#cfcbc2;text-align:center;margin:0 auto">One piece, worn well. One decision. One chance.</p></div></section>
+<section><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">Journal</span><h2 style="margin-top:12px">From the Rooftop</h2></div><div class="arrows"><button data-action="rail" data-d="-1" aria-label="Previous">←</button><button data-action="rail" data-d="1" aria-label="Next">→</button></div></div>
+  ${rail()}
+</div></section>
+${newsletter()}`;
+function rail(){return `<div class="rail" id="rail" tabindex="0" aria-label="Journal gallery">
+  <figure>${camp('camp-rooftop','Rooftop campaign, both tees',1122,1402)}<figcaption>The rooftop · Miami</figcaption></figure>
+  <figure>${camp('camp-front','Campaign front view')}<figcaption>Front</figcaption></figure>
+  <figure>${camp('camp-back','Campaign back view')}<figcaption>Back</figcaption></figure>
+  <figure>${camp('camp-street','Two men walking a palm-lined Miami street in the white and black CHANCE tees',825,1100)}<figcaption>The avenue · Miami</figcaption></figure>
+  <figure>${camp('camp-bay','One man seated and one standing on a curved balcony above Biscayne Bay in the white and black CHANCE tees',950,970).replace('<img ','<img style="aspect-ratio:950/970" ')}<figcaption>The bay · Miami</figcaption></figure></div>`}
+function newsletter(){return `<section class="news"><div class="wrap rv">
+  <span class="eyebrow">The List</span><h2>Private access.</h2>
+  <p style="margin:0 auto">Be first to hear about new pieces and drops. No noise.</p>
+  <form id="nf" novalidate><label class="eyebrow" for="ne" style="position:absolute;left:-999px">Email address</label><input id="ne" type="email" placeholder="Email address" autocomplete="email" required><button class="btn" type="submit">Subscribe</button></form>
+  <div class="msg" id="nm" aria-live="polite"></div></div></section>`}
+
+V.shop=()=>`<div class="wrap"><div class="page-head"><span class="eyebrow">Collection 001</span><h1 style="font-size:clamp(32px,5vw,64px);margin-top:12px">The Collection</h1></div>
+  <div class="toolbar"><div class="chips" role="group" aria-label="Filter by colour">${['All','Black','White'].map(c=>`<button class="chip" data-action="filter" data-v="${c}" aria-pressed="${c===state.filter}">${c==='White'?'White':c}</button>`).join('')}</div>
+  <label class="eyebrow">Sort <select data-action="sort" aria-label="Sort products"><option value="feat" ${state.sort==='feat'?'selected':''}>Featured</option><option value="lo" ${state.sort==='lo'?'selected':''}>Price: low to high</option><option value="hi" ${state.sort==='hi'?'selected':''}>Price: high to low</option></select></label></div>
+  <div class="grid" id="sg"></div></div><div style="height:100px"></div>`;
+function fillShop(){
+  let l=PRODUCTS.filter(p=>state.filter==='All'||p.color===state.filter);
+  if(state.sort==='lo')l=[...l].sort((a,b)=>unit(a)-unit(b));if(state.sort==='hi')l=[...l].sort((a,b)=>unit(b)-unit(a));
+  $('#sg').innerHTML=l.length?l.map(card).join(''):'<p class="empty">No pieces match this filter.</p>';reveal();
+}
+V.pdp=id=>{
+  const p=getP(id),so=p.avail==='soldout';
+  const rel=PRODUCTS.filter(x=>x.id!==id);
+  const rv=recent.filter(x=>x!==id).map(getP).filter(Boolean);
+  return `<div class="wrap"><div class="pdp">
+  <div class="gal"><figure class="wide">${imgT(p.front,p.name+' front, genuine product photograph',1600,'fetchpriority="high"',1600).replace('loading="lazy"','')}</figure>
+   <figure>${imgT(p.back,p.name+' back, genuine product photograph')}</figure><figure>${imgT(p.dF,p.name+' chest mark, close-up')}</figure><figure class="wide">${imgT(p.dB,p.name+' back artwork, close-up',1600,'',1600)}</figure></div>
+  <div class="buy">
+   <div class="crumbs"><a href="#home">Home</a> / <a href="#shop">Collection</a></div>
+   <h1>${p.name}</h1>
+   <div class="price" style="font-size:18px">${priceHTML(p)} ${p.sale?'<span class="eyebrow" style="margin-left:10px">Running sale</span>':''}</div>
+   <p style="color:#cfcbc2">${p.desc}</p>
+   <div><div class="lbl" style="margin-bottom:10px">Size <a href="#sizing" class="link" style="margin-left:12px">Size guide</a></div>
+     <div class="sizes" role="group" aria-label="Size">${CFG.sizes.map(s=>{const out=so||stock(p.id,s)<1;return `<button data-action="size" data-v="${s}" aria-pressed="false" ${out?'disabled aria-label="'+s+', sold out" style="opacity:.35;text-decoration:line-through"':''}>${s}</button>`}).join('')}</div>
+     <div class="err-t" id="se" role="alert"></div></div>
+   <button class="btn solid" data-action="add" data-id="${p.id}" ${so?'disabled':''}>${so?'Sold out':'Add to bag'}</button>
+   
+   <div><details><summary>Details</summary><p>${p.desc}</p></details>
+   <details><summary>Material &amp; care</summary><p>${p.mat}</p><div style="font-size:13px;color:#cfcbc2;margin-top:10px">${p.care}</div></details>
+   <details><summary>Fit</summary><p>${p.fit}</p></details>
+   <details><summary>Shipping &amp; returns</summary><p class="ph">Policy to be confirmed by CHANCE. Complimentary U.S. shipping is offered on orders over $150. <a class="link" href="#shipping">Read more</a></p></details></div>
+  </div></div>
+  <section><div class="sec-head"><h2 style="font-size:clamp(20px,2.4vw,30px)">Also in the collection</h2></div><div class="grid">${rel.map(card).join('')}</div>
+  ${rv.length?`<div class="sec-head" style="margin-top:80px"><h2 style="font-size:clamp(20px,2.4vw,30px)">Recently viewed</h2></div><div class="grid">${rv.map(card).join('')}</div>`:''}</section></div>`;
+};
+V.house=()=>`<div class="wrap"><div class="page-head"><span class="eyebrow">The House</span><h1 style="font-size:clamp(32px,5vw,64px);margin-top:12px">Miami. Signature. One.</h1></div>
+  <div class="split" style="margin-bottom:80px"><div class="ed-img">${camp('camp-rooftop','CHANCE campaign on a Miami rooftop',1122,1402)}</div>
+  <div class="prose"><p>CHANCE is a Miami clothing house built on a single idea: it only takes one. One piece, chosen with intent.</p>
+  <p>Collection 001 is two signature tees. They are not limited editions; they are the pieces the house is known by.</p>
+  <h2>Founded</h2><p>EST. 2024.</p>
+  <h2>Story</h2><p class="ph">Founder story and brand history to be supplied by CHANCE.</p></div></div></div>`;
+V.journal=()=>`<div class="wrap"><div class="page-head"><span class="eyebrow">Journal</span><h1 style="font-size:clamp(32px,5vw,64px);margin-top:12px">From the Rooftop</h1></div>${rail()}
+  <p class="ph" style="margin-top:28px;font-size:12px">Campaign images are AI-assisted. Where a campaign image differs from a product photograph, the product photograph is correct. Additional Brickell and Design District imagery to come.</p></div><div style="height:90px"></div>`;
+const INFO={
+ shipping:['Shipping & Returns',`<p><b>DRAFT — pending CHANCE approval.</b></p><h2>Shipping</h2><p>Orders ship within 3–5 business days. U.S. shipping rates are calculated at checkout. Complimentary U.S. shipping on orders over $150.</p><h2>Returns</h2><p>Unworn, unwashed items with tags may be returned within 14 days of delivery for a refund to the original payment method. Return shipping is paid by the customer. To start a return, contact us using the details on the Contact page.</p><h2>Exchanges</h2><p>Size exchanges are subject to availability.</p>`],
+ sizing:['Size Guide',`<p>Collection 001 tees are a relaxed, boxy fit in sizes S–XXL. <b>Per-size chest, length and sleeve measurements are to be confirmed.</b></p>`],
+ privacy:['Privacy',`<p><b>DRAFT — pending review.</b> CHANCE collects the information you provide at checkout or when subscribing (name, email, shipping address) to fulfil orders and send updates you request. We do not sell personal information. Payment is processed by our checkout provider; we do not store card details. You may ask us to delete your data at any time via the Contact page.</p>`],
+ terms:['Terms',`<p><b>DRAFT — pending review.</b> By placing an order you agree to pay the listed price plus applicable shipping and tax. Orders are subject to availability and acceptance. Product photographs show the actual items; colours may vary slightly by screen. Returns are governed by the Shipping &amp; Returns page. These terms are governed by the laws of the State of Florida.</p>`],
+ contact:['Contact',`<p>${CFG.contact.email?`Email: <a class="link" href="mailto:${CFG.contact.email}">${CFG.contact.email}</a>`:'<span class="ph">Contact email: to be added.</span>'}</p><p>${CFG.contact.instagram?`Social: ${CFG.contact.instagram} on all platforms`:'<span class="ph">Instagram handle: to be added.</span>'}</p>`]};
+V.info=k=>`<div class="wrap"><div class="page-head"><span class="eyebrow">CHANCE</span><h1 style="font-size:clamp(30px,4vw,52px);margin-top:12px">${INFO[k][0]}</h1></div><div class="prose">${INFO[k][1]}</div></div><div style="height:100px"></div>`;
+V.nf=()=>`<div class="wrap"><div class="page-head"><h1>Not found</h1><p style="margin-top:16px"><a class="link" href="#home">Return home</a></p></div></div>`;
+
+/* ============ ROUTER (plain-name hashes) ============ */
+const state={filter:'All',sort:'feat'};
+function setMeta(t){document.title=t?`${t} | CHANCE`:'CHANCE — Collection 001 | It Only Takes One'}
+function route(){
+  const h=(location.hash||'#home').slice(1)||'home';const app=$('#app');
+  closeAll(true);$$('.nav a').forEach(a=>a.removeAttribute('aria-current'));
+  const old=$('#pjson');old&&old.remove();
+  let html,title='';
+  const p=PRODUCTS.find(x=>x.slug===h);
+  if(h==='home'){html=V.home()}
+  else if(h==='shop'){html=V.shop();title='Collection'}
+  else if(p){html=V.pdp(p.id);title=p.name;recent=[p.id,...recent.filter(x=>x!==p.id)].slice(0,4);save();
+    const s=document.createElement('script');s.type='application/ld+json';s.id='pjson';
+    s.textContent=JSON.stringify({'@context':'https://schema.org','@type':'Product',name:p.name,brand:{'@type':'Brand',name:'CHANCE'},description:p.desc,offers:{'@type':'Offer',priceCurrency:'USD',price:String(unit(p)),availability:'https://schema.org/InStock'}});document.head.appendChild(s)}
+  else if(h==='house'){html=V.house();title='The House'}
+  else if(h==='journal'){html=V.journal();title='Journal'}
+  else if(INFO[h]){html=V.info(h);title=INFO[h][0]}
+  else{html=V.nf();title='Not found'}
+  app.innerHTML=html;setMeta(title);
+  const n=$(`.nav a[data-nav="${h}"]`);n&&n.setAttribute('aria-current','page');
+  if(h==='shop')fillShop();
+  window.scrollTo(0,0);reveal();
+  const nf=$('#nf');nf&&nf.addEventListener('submit',subscribe);
+}
+function reveal(){
+  const els=$$('.rv:not(.in)');
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+  els.forEach(e=>io.observe(e));
+}
+function subscribe(e){
+  e.preventDefault();const v=$('#ne').value.trim(),m=$('#nm');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){m.className='msg err';m.textContent='Please enter a valid email address.';return}
+  if(!CFG.newsletterEndpoint){m.className='msg';m.textContent='Sign-up is not connected yet. Your email was not saved.';return}
+}
+
+/* ============ EVENTS ============ */
+let size=null;
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-action],[data-skip]');if(!t)return;
+  if(t.hasAttribute('data-skip')){e.preventDefault();$('#app').focus();return}
+  const a=t.dataset.action,i=+t.dataset.i;
+  switch(a){
+   case 'menu':$('#mnav').classList.add('open');document.body.style.overflow='hidden';break;
+   case 'menuclose':case 'closeall':closeAll();break;
+   case 'cart':openPanel($('#cart'));break;
+   case 'search':openPanel($('#search'));$('#q').value='';runSearch('');break;
+   case 'contact':location.hash='contact';break;
+   case 'inc':if(cart[i].q>=stock(cart[i].id,cart[i].size)){toast('Maximum available in this size');break}cart[i].q++;save();renderCart();break;
+   case 'dec':cart[i].q--;if(cart[i].q<1)cart.splice(i,1);save();renderCart();break;
+   case 'rm':cart.splice(i,1);save();renderCart();break;
+   case 'checkout':{
+     const v=CFG.shop.variants,miss=cart.some(l=>!v[l.id+'-'+l.size]);
+     if(!CFG.shop.domain||miss){toast('Checkout is not connected yet');break}
+     window.open(`https://${CFG.shop.domain}/cart/`+cart.map(l=>v[l.id+'-'+l.size]+':'+l.q).join(','),'_blank','noopener');break}
+   case 'filter':state.filter=t.dataset.v;$$('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.v===state.filter));fillShop();break;
+   case 'size':size=t.dataset.v;$$('.sizes button').forEach(b=>b.setAttribute('aria-pressed',b===t));$('#se').textContent='';break;
+   case 'add':
+     if(!size){$('#se').textContent='Please select a size.';break}
+     addToCart(t.dataset.id,size);toast('Added to bag');openPanel($('#cart'));break;
+   case 'rail':{const r=$('#rail');r&&r.scrollBy({left:+t.dataset.d*r.clientWidth*.8,behavior:'smooth'});break}
+  }
+});
+document.addEventListener('change',e=>{if(e.target.dataset.action==='sort'){state.sort=e.target.value;fillShop()}});
+$('#q').addEventListener('input',e=>runSearch(e.target.value));
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeAll();
+  if(e.key==='Tab'){const d=$('#cart.open')||$('#search.open');if(!d)return;
+    const f=$$('button,a,input,[tabindex="0"]',d).filter(x=>!x.disabled&&x.offsetParent!==null);if(!f.length)return;
+    const first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
+  if(e.target.id==='rail'&&(e.key==='ArrowRight'||e.key==='ArrowLeft'))e.target.scrollBy({left:(e.key==='ArrowRight'?1:-1)*300,behavior:'smooth'});
+});
+window.addEventListener('hashchange',()=>{size=null;route()});
+renderCart();route();
+</script>
+</body>
+</html>
