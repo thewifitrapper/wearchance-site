@@ -591,6 +591,19 @@ document.addEventListener('keydown',e=>{
 });
 window.addEventListener('hashchange',()=>{size=null;route()});
 renderCart();route();
+/* Live price from Shopify: when the Founders Price ends, Shopify's price rises to the regular price and the site follows automatically. Falls back to the built-in prices if Shopify is unreachable. */
+(function syncPrices(){
+  const H={white:'chance-signature-tee-white',black:'chance-signature-tee-black'};
+  Promise.all(PRODUCTS.map(p=>fetch('https://'+CFG.shop.domain+'/products/'+H[p.id]+'.js').then(r=>r.ok?r.json():null).catch(()=>null))).then(rs=>{
+    let changed=false;
+    rs.forEach((j,i)=>{const p=PRODUCTS[i];if(!j||!j.variants||!j.variants.length)return;
+      const live=Math.round(Math.min.apply(null,j.variants.map(v=>+v.price))/100);
+      if(!(live>0))return;
+      const nextSale=live<p.price?live:null;
+      if(nextSale!==p.sale){p.sale=nextSale;changed=true}});
+    if(changed)route();
+  });
+})();
 </script>
 </body>
 </html>
