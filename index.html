@@ -309,7 +309,7 @@ const CFG={
   // SHOPIFY: fill these after the store is reactivated and products exist.
   // variants: map 'productId-size' -> numeric Shopify variant ID. Checkout uses a cart permalink (no API token needed).
   shop:{domain:'ijbf1b-fy.myshopify.com',variants:{"white-S": "68539988508951", "white-M": "68539988541719", "white-L": "68539988574487", "white-XL": "68539988607255", "white-XXL": "68539988640023", "black-S": "68539989983511", "black-M": "68539990016279", "black-L": "68539990049047", "black-XL": "68539990081815", "black-XXL": "68539990114583"}},     // e.g. domain:'wearchance.com' or 'yacgw6-jb.myshopify.com'
-  contact:{email:'',instagram:'@wearchance'},  // fill in
+  contact:{email:'wearchance@yahoo.com',instagram:'@wearchance'},  // fill in
   checkoutConnected:false,
   newsletterEndpoint:'',            // INTEGRATION POINT: Mailchimp form action URL
   img:(k,w)=>`images/${k}-${w}.webp`
@@ -469,7 +469,7 @@ V.pdp=id=>{
    <div><details><summary>Details</summary><p>${p.desc}</p></details>
    <details><summary>Material &amp; care</summary><p>${p.mat}</p><div style="font-size:13px;color:#cfcbc2;margin-top:10px">${p.care}</div></details>
    <details><summary>Fit</summary><p>${p.fit}</p></details>
-   <details><summary>Shipping &amp; returns</summary><p class="ph">Policy to be confirmed by CHANCE. Complimentary U.S. shipping is offered on orders over $150. <a class="link" href="#shipping">Read more</a></p></details></div>
+   <details><summary>Shipping &amp; returns</summary><p class="ph">Complimentary U.S. shipping on orders of $150 or more, which covers any two pieces. Unworn items may be returned within 14 days. <a class="link" href="#shipping">Read more</a></p></details></div>
   </div></div>
   <section><div class="sec-head"><h2 style="font-size:clamp(20px,2.4vw,30px)">Also in the collection</h2></div><div class="grid">${rel.map(card).join('')}</div>
   ${rv.length?`<div class="sec-head" style="margin-top:80px"><h2 style="font-size:clamp(20px,2.4vw,30px)">Recently viewed</h2></div><div class="grid">${rv.map(card).join('')}</div>`:''}</section></div>`;
