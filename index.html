@@ -322,13 +322,13 @@ const PRODUCTS=[
   {id:'white',slug:'product-white',name:'CHANCE Signature Tee — White',short:'White with black gloss',color:'White',price:110,sale:90,
    front:'white-front',back:'white-back',dF:'white-detail-front',dB:'white-detail-back',avail:'available',
    desc:'The CHANCE signature tee in white, with a restrained black gloss mark at the chest and the curved question-mark artwork across the back.',
-   mat:'Material: 100% cotton. Weight: 280 GSM compact knit. Made in Pakistan.',
+   mat:'Material: 100% cotton. Weight: 280 GSM compact knit. Hand cut and sewn at our factory in Pakistan.',
    fit:'Relaxed, boxy fit. Available in sizes S–XXL. Model height and size worn: to be confirmed.',
    care:'<ul style="margin:10px 0 0 18px"><li>Machine wash cold, inside out</li><li>Wash with similar colors</li><li>Use mild detergent</li><li>Do not bleach</li><li>Do not iron directly over artwork</li><li>Hang dry or tumble dry low</li><li>Do not dry clean</li></ul>'},
   {id:'black',slug:'product-black',name:'CHANCE Signature Tee — Black',short:'Black on black',color:'Black',price:110,sale:90,
    front:'black-front',back:'black-back',dF:'black-detail-front',dB:'black-detail-back',avail:'available',
    desc:'The CHANCE signature tee in black, with a tonal gloss mark at the chest and the curved question-mark artwork across the back.',
-   mat:'Material: 100% cotton. Weight: 280 GSM compact knit. Made in Pakistan.',
+   mat:'Material: 100% cotton. Weight: 280 GSM compact knit. Hand cut and sewn at our factory in Pakistan.',
    fit:'Relaxed, boxy fit. Available in sizes S–XXL. Model height and size worn: to be confirmed.',
    care:'<ul style="margin:10px 0 0 18px"><li>Machine wash cold, inside out</li><li>Wash with similar colors</li><li>Use mild detergent</li><li>Do not bleach</li><li>Do not iron directly over artwork</li><li>Hang dry or tumble dry low</li><li>Do not dry clean</li></ul>'}
 ];
@@ -337,7 +337,7 @@ const money=n=>'$'+n.toFixed(2).replace(/\.00$/,'');
 const getP=id=>PRODUCTS.find(p=>p.id===id);
 const stock=(id,sz)=>(STOCK[id]||{})[sz]||0;
 PRODUCTS.forEach(p=>{p.avail=CFG.sizes.some(z=>stock(p.id,z)>0)?'available':'soldout'});
-const priceHTML=p=>p.sale&&p.sale<p.price?`<s>${money(p.price)}</s>${money(p.sale)}`:money(p.price);
+const priceHTML=p=>money(unit(p));
 const unit=p=>p.sale&&p.sale<p.price?p.sale:p.price;
 const imgT=(k,alt,w=800,extra='',dim=800)=>`<img src="${CFG.img(k,w)}" srcset="${CFG.img(k,800)} 800w, ${CFG.img(k,1600)} 1600w" sizes="(max-width:620px) 100vw, 48vw" width="${dim}" height="${dim}" alt="${alt}" loading="lazy" decoding="async" ${extra}>`;
 const camp=(k,alt,w=1024,h=1536,eager=false)=>`<img src="images/${k}-1024.webp" srcset="images/${k}-640.webp 640w, images/${k}-1024.webp 1024w" sizes="(max-width:860px) 100vw, 55vw" width="${w}" height="${h}" alt="${alt}" ${eager?'fetchpriority="high"':'loading="lazy"'} decoding="async">`;
@@ -463,7 +463,7 @@ V.pdp=id=>{
   <div class="buy">
    <div class="crumbs"><a href="#home">Home</a> / <a href="#shop">Collection</a></div>
    <h1>${p.name}</h1>
-   <div class="price" style="font-size:18px">${priceHTML(p)} ${p.sale?'<span class="eyebrow" style="margin-left:10px">Founders Price · first 50 pieces</span>':''}</div>
+   <div class="price" style="font-size:18px">${priceHTML(p)} ${p.sale?'<span class="eyebrow" style="margin-left:10px">Founders Price</span>':''}</div>${p.sale?`<p class="ph" style="margin:8px 0 0;font-size:12px">Founders Price applies to the first 50 pieces. The price then rises to ${money(p.price)}.</p>`:''}
    <p style="color:#cfcbc2">${p.desc}</p>
    <div><div class="lbl" style="margin-bottom:10px">Size <a href="#sizing" class="link" style="margin-left:12px">Size guide</a></div>
      <div class="sizes" role="group" aria-label="Size">${CFG.sizes.map(s=>{const out=so||stock(p.id,s)<1;return `<button data-action="size" data-v="${s}" aria-pressed="false" ${out?'disabled aria-label="'+s+', sold out" style="opacity:.35;text-decoration:line-through"':''}>${s}</button>`}).join('')}</div>
