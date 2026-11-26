@@ -314,7 +314,7 @@ const CFG={
   shop:{domain:'ijbf1b-fy.myshopify.com',variants:{"white-S": "68539988508951", "white-M": "68539988541719", "white-L": "68539988574487", "white-XL": "68539988607255", "white-XXL": "68539988640023", "black-S": "68539989983511", "black-M": "68539990016279", "black-L": "68539990049047", "black-XL": "68539990081815", "black-XXL": "68539990114583"}},     // e.g. domain:'wearchance.com' or 'yacgw6-jb.myshopify.com'
   contact:{email:'support@wearchance.com',instagram:'@wearchance'},  // fill in
   checkoutConnected:false,
-  newsletterEndpoint:'',            // INTEGRATION POINT: Mailchimp form action URL
+  newsletterEndpoint:'https://assets.mailerlite.com/jsonp/2825902/forms/205207226777863554/subscribe', // MailerLite embedded form
   img:(k,w)=>`images/${k}-${w}.webp`
 };
 const STOCK={white:{S:5,M:12,L:16,XL:12,XXL:5},black:{S:5,M:12,L:16,XL:12,XXL:5}}; // from CHANCE; Shopify becomes source of truth once connected
@@ -441,7 +441,7 @@ function rail(){return `<div class="rail" id="rail" tabindex="0" aria-label="Jou
 function newsletter(){return `<section class="news"><div class="wrap rv">
   <span class="eyebrow">The List</span><h2>Private access.</h2>
   <p style="margin:0 auto">Be first to hear about new pieces and drops. No noise.</p>
-  <form id="nf" novalidate><label class="eyebrow" for="ne" style="position:absolute;left:-999px">Email address</label><input id="ne" type="email" placeholder="Email address" autocomplete="email" required><button class="btn" type="submit">Subscribe</button></form>
+  <form id="nf" novalidate><label class="eyebrow" for="ne" style="position:absolute;left:-999px">Email address</label><input id="ne" type="email" placeholder="Email address" autocomplete="email" required><input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0"><button class="btn" type="submit">Subscribe</button></form>
   <div class="msg" id="nm" aria-live="polite"></div></div></section>`}
 
 V.shop=()=>`<div class="wrap"><div class="page-head"><span class="eyebrow">Collection 001</span><h1 style="font-size:clamp(32px,5vw,64px);margin-top:12px">The Collection</h1></div>
@@ -540,6 +540,14 @@ function subscribe(e){
   e.preventDefault();const v=$('#ne').value.trim(),m=$('#nm');
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){m.className='msg err';m.textContent='Please enter a valid email address.';return}
   if(!CFG.newsletterEndpoint){m.className='msg';m.textContent='Sign-up is not connected yet. Your email was not saved.';return}
+  const nf=$('#nf');if(nf.dataset.busy)return;
+  if(nf.querySelector('[name=website]')&&nf.querySelector('[name=website]').value){m.className='msg ok';m.textContent='You are on the list.';return}
+  nf.dataset.busy='1';m.className='msg';m.textContent='One moment…';
+  const fd=new FormData();fd.append('fields[email]',v);fd.append('ml-submit','1');fd.append('anticsrf','true');
+  const ok=()=>{m.className='msg ok';m.textContent='You are on the list. Welcome to CHANCE.';$('#ne').value='';delete nf.dataset.busy};
+  const bad=()=>{m.className='msg err';m.textContent='Something went wrong. Please try again, or email support@wearchance.com.';delete nf.dataset.busy};
+  fetch(CFG.newsletterEndpoint,{method:'POST',body:fd}).then(r=>r.json()).then(j=>{j&&j.success?ok():bad()}).catch(()=>{
+    fetch(CFG.newsletterEndpoint,{method:'POST',body:fd,mode:'no-cors'}).then(ok).catch(bad)});
 }
 
 /* ============ EVENTS ============ */
