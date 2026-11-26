@@ -3,9 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CHANCE — Collection 001 | It Only Takes One</title>
+<title>CHANCE</title>
 <meta name="description" content="CHANCE is a Miami luxury clothing house. Collection 001: signature tees in black on black and white with black gloss. It only takes one.">
-<meta property="og:title" content="CHANCE — Collection 001">
+<meta property="og:title" content="CHANCE">
+<meta property="og:site_name" content="CHANCE">
+<meta name="twitter:title" content="CHANCE">
 <meta property="og:description" content="Signature pieces from Miami. It only takes one.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://wearchance.com/images/camp-rooftop-1024.webp">
@@ -503,7 +505,7 @@ V.nf=()=>`<div class="wrap"><div class="page-head"><h1>Not found</h1><p style="m
 
 /* ============ ROUTER (plain-name hashes) ============ */
 const state={filter:'All',sort:'feat'};
-function setMeta(t){document.title=t?`${t} | CHANCE`:'CHANCE — Collection 001 | It Only Takes One'}
+function setMeta(t){document.title=t?`${t} | CHANCE`:'CHANCE'}
 function route(){
   const h=(location.hash||'#home').slice(1)||'home';const app=$('#app');
   closeAll(true);$$('.nav a').forEach(a=>a.removeAttribute('aria-current'));
